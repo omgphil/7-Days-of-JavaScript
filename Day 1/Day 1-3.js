@@ -25,7 +25,7 @@ else if (marks > 40)
 {
     console.log("CD")
 }
-else if (marks > 300)
+else if (marks > 30)
 {
     console.log("DD")
 }
