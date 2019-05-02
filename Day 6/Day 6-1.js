@@ -1,15 +1,16 @@
 function processData(input) {
     // Split the function at the new line.
-    var rows = input.split('\n');
-    var cash = rows[0].split(' ').map(Number)[1];
-    var arr = rows[1].split(' ').map(Number);
-    arr = arr.sort(function(a, b){return a-b}); 
-    var numofToys = 0;
-    while(cash>=0) {
-        cash -= arr[numofToys];
-        numofToys++;
-    }
+    const rows = input.split('\n');
+    let cash = rows[0].split(' ').map(Number)[1];
+    const arr = rows[1].split(' ').map(Number).sort((a,b) => a - b);
     
-    // must denote -1 to compesate for the extra loop pass
-    console.log(numofToys-1);
+    var numofToys = 0;
+    for(price of arr){
+        cash -= price;
+        if(cash < 0 ){
+            break;
+        }
+        numofToys++;
+    }   
+    console.log(numofToys);
 } 
